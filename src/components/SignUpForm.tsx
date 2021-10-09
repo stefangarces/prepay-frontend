@@ -63,7 +63,6 @@ export default function SignUp() {
                                     id="lastName"
                                     label="Efternamn"
                                     name="lastName"
-                                    autoComplete="lname"
                                 />
                             </Grid>
                             <Grid item xs={12}>
@@ -72,8 +71,36 @@ export default function SignUp() {
                                     fullWidth
                                     id="socialSecurityNumber"
                                     label="Personnummer"
-                                    name="email"
-                                    autoComplete="email"
+                                />
+                            </Grid>
+                            <Grid item xs={12}>
+                                <TextField
+                                    required
+                                    fullWidth
+                                    id="homeAdress"
+                                    label="Adress"
+                                    name="homeAdress"
+                                    autoComplete="street-address"
+                                />
+                            </Grid>
+                            <Grid item xs={12} sm={6}>
+                                <TextField
+                                    required
+                                    fullWidth
+                                    id="city"
+                                    label="Ort"
+                                    name="city"
+                                    autoComplete="address-level1"
+                                />
+                            </Grid>
+                            <Grid item xs={12} sm={6}>
+                                <TextField
+                                    required
+                                    fullWidth
+                                    id="lastName"
+                                    label="Postnummer"
+                                    name="lastName"
+                                    autoComplete="postal-code"
                                 />
                             </Grid>
                             <Grid item xs={12}>
