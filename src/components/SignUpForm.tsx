@@ -13,6 +13,22 @@ import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Copyright from "./Copyright";
 
+
+
+async function jsonData() {
+    const resp = await fetch(
+        "https://localhost:44333/api/Customers/9112291456");
+    if (resp.ok) {
+        let json = await resp.json();
+        const firstName = json[0].firstName;
+        const lastName = json[0].lastName;
+        const socialSecurityNumber = json[0].socialSecurityNumber;
+
+        console.log(json);
+    }
+}
+
+
 const theme = createTheme();
 
 export default function SignUp() {
@@ -52,7 +68,7 @@ export default function SignUp() {
                                     disabled
                                     fullWidth
                                     id="firstName"
-                                    label="Namn"
+                                    label="Förnamn"
                                     autoFocus
                                 />
                             </Grid>
@@ -158,7 +174,6 @@ export default function SignUp() {
                         </Grid>
                     </Box>
                 </Box>
-                <Copyright sx={{ mt: 5 }} />
             </Container>
         </ThemeProvider>
     );
